@@ -47,6 +47,12 @@ app.get('/about', (req, res) => {
     });
 });
 
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects Portfolio Page'
+    });
+});
+
 app.get('/bad', (req, res) => {
     res.status(404).send({
         errorMessage: 'Invalid URL'
