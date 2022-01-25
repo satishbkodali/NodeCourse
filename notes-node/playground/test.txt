@@ -1,0 +1,70 @@
+Automation testing framework using Selenium + Java + Cucumber with BDD style
+
+# System Requirements
+
+Install Java  
+<https://docs.oracle.com/en/java/javase/15/install/installation-jdk-macos.html#GUID-F575EB4A-70D3-4AB4-A20E-DBE95171AB5F>
+
+	'#Set JAVA Home'
+	'export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-15.0.1.jdk/Contents/Home'
+
+Install Maven  
+<https://maven.apache.org/install.html>
+
+	'# Add maven to path'
+	'export PATH=$PATH:$HOME/maven/apache-maven-3.6.3/bin'
+
+Install Chrome
+
+Clone the Git Project to your local directory
+  
+To run all the tests  
+>	mvn test
+
+#### Tools used for the automation framework
+* TestNG  
+<https://testng.org/doc/documentation-main.html>  
+* Selenium WebDriver  
+<https://www.javadoc.io/doc/org.seleniumhq.selenium/selenium-api/2.50.1/org/openqa/selenium/WebDriver.html>  
+
+	
+
+
+There are two modules for this project
+* Core framework
+* Web Automation
+
+
+#### Core Framework:
+This module contains all the common utilities used across projects
+
+ 
+ 
+ * *Configuration handling*  
+ 	- Reading properties from configuration files. 
+ 		 
+  
+ 		
+ * *Excel Data Providers*  
+ 	- Read test data from excel files.Requires the file to be named the same as test method and in the folder named packagename/classname/ in the src/test/resources folder  
+ 		
+ 
+ 
+## Web Automation:
+This module contains all the UI related tests.
+
+  
+*Webdriver Manager*  
+The Webdriver manager is used to select the appropriate webriver for the browser installed on the machine  
+<https://github.com/bonigarcia/webdrivermanager>  
+
+
+	
+*Page Object Model*  
+The UI Test automation is written using the Page Object Model design pattern where the page element location and interaction is separated from testing Logic 
+<https://www.selenium.dev/documentation/en/guidelines_and_recommendations/page_object_models/>  
+
+* Use element id if available
+* Use Xpath with a visual label( field label text, Menu label etc)
+* Do not use full xpaths starting at html since the page structure and layout can change.
+* Do not put any business logic or Assertions in the Page class
